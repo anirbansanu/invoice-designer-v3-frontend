@@ -1,0 +1,179 @@
+I’m building an advanced, full-featured **dynamic invoice and product label designer module** for my ERP system, which is built with **Laravel** (backend) and **Vue 3 + Vite** (frontend). 
+
+My goal is to provide business users with a **drag-and-drop UI editor** to **design their own invoice and label templates** visually — with pixel-perfect layout control — and render those designs dynamically at print-time with real data.
+
+---
+
+### 🧩 Required Editor Components (Drag-and-Drop)
+
+✅ Logo  
+✅ Company information  
+✅ Custom fields (e.g., Name, Date, Tax No)  
+✅ Table columns (Items, Rates, Discounts, etc.)  
+✅ Dynamic variables (e.g., `{{invoice.number}}`, `{{customer.name}}`)  
+✅ Barcode & QR Code (auto-generated from data)  
+✅ Images (uploadable from local files)  
+✅ Page background images  
+✅ Text blocks  
+✅ Lines and shapes (rectangle, line)  
+✅ Multi-page layout support (canvas pagination)  
+✅ Resizable & Rotatable components  
+✅ Layer management (z-index reordering)
+
+---
+
+### ⚙️ Style & Formatting Controls (Right Panel)
+
+Each selected component should expose real-time configurable properties such as:
+
+- Width & Height  
+- Font Size, Font Weight, Font Family  
+- Text Alignment (left, center, right)  
+- Font Color  
+- Background Color  
+- Border (Stroke Color & Width)  
+- Opacity  
+- Padding / Margin  
+- Position (x, y)  
+- Rotation  
+- Lock / Unlock component  
+
+> These should be shown in a **right sidebar** when an element is selected and updated live on canvas.
+
+---
+
+### 🔁 Export & Import Features (Core)
+
+- **Export Template to JSON**  
+  > Allow the user to export the entire canvas design as a JSON file (e.g., `invoice-template.json`) for backup or migration.
+
+- **Import Template from JSON**  
+  > Allow loading a previously saved template design (structure and styles) from a JSON file into the editor.
+
+- **Export to PDF**  
+  > Render final invoice using real data and save/print it as a high-quality PDF.
+
+- **Export to Image (optional)**  
+  > Render canvas as image preview for quick snapshots or thumbnails.
+
+---
+
+### 🔍 What I want AI to help with:
+
+#### ✅ CORE ARCHITECTURE
+
+1. Design a **scalable JSON-based schema** to store invoice/label templates.
+2. Suggest **MySQL vs MongoDB** for storing templates and design metadata (pros/cons).
+3. Provide a **Laravel API design**:
+   - CRUD for templates
+   - Upload API for images
+   - Render endpoint for PDF generation
+   - Import/export endpoint for JSON design templates
+4. Recommend a **modular project folder structure** for Laravel + Vue.
+5. How to build **data binding engine** for replacing dynamic tags (`{{customer.name}}`) at runtime.
+
+---
+
+### 🧰 Frontend Capabilities (Vue 3 + Fabric.js/Konva)
+
+- Canvas-based drag-and-drop editor using **Fabric.js** or **Konva.js**
+- Custom component toolbox (left sidebar)
+- Property/style editor panel (right sidebar)
+- Canvas layers and multi-page canvas support
+- Snap to grid & smart alignment guides
+- Zoom / pan controls
+- Keyboard shortcuts (e.g., Ctrl+S to save, Ctrl+Z to undo)
+- Undo/redo functionality using history stack
+- Load design from backend (via Axios)
+- Export/import templates as JSON
+- Upload images to backend via API and render them on canvas
+- Responsive design for large canvases and scroll zones
+
+---
+
+### 📄 Output Rendering Requirements
+
+- Dynamically inject real invoice/order data into saved template design
+- Match layout between canvas and final **PDF output** exactly
+- PDF engines: `DOMPDF`, `SnappyPDF`, or `Puppeteer`
+- Page size support: A4, Letter, Custom sizes (mm/in)
+- Auto-generate QR & Barcode using JS libraries (`jsbarcode`, `vue-qrcode`)
+- Print preview mode with data applied
+- Multi-page PDF rendering support
+- High DPI / print-safe margins & bleed area
+
+---
+
+### 🧠 ADVANCED FEATURES TO INCLUDE
+
+| Feature                       | Description |
+|------------------------------|-------------|
+| Template Versioning          | Save as v1, v2, rollback to old versions |
+| Template Cloning             | Copy an existing template |
+| Collaborative Editing        | (Optional) Use WebSockets or Laravel Echo |
+| Conditional Fields           | Show/hide based on logic (`if total > 0`) |
+| Rule-based Layout Engine     | Auto-layout based on invoice state |
+| Dynamic Tables               | Repeat rows for items, dynamic column selection |
+| Template Categories/Types    | Label, Invoice, Packing Slip, POS Bill |
+| Role-based Access Control    | Viewer, Editor, Admin |
+| Dark Mode Editor UI          | Toggle editor theme |
+| Mobile/Tablet Editing Support| Responsive layout for touch editing |
+| Multiple Page Layout Support | Navigate and design page-by-page |
+
+---
+
+### 📦 Basic Usability Features (Must-Have)
+
+- Toast/success messages for actions (e.g., Saved, Exported)
+- Loading indicators during fetch/render
+- Undo/redo with visual buttons
+- Grid toggle (on/off)
+- Live preview button (toggle edit/view mode)
+- Save as Draft vs Publish template
+- Preview on sample data
+- Clone & delete template buttons
+- Inline tag autocomplete when typing `{{`
+
+---
+
+### 📈 Final Objective
+
+To have a fully **modular, scalable, user-friendly invoice/label designer** module that:
+
+- Supports pixel-perfect design creation  
+- Stores designs centrally and safely  
+- Renders output dynamically for any data  
+- Matches PDF and canvas layouts  
+- Allows export/import and collaborative use  
+- Scales to support **multi-tenant ERP SaaS usage**  
+
+---
+
+### 🧪 AI: What I Expect From You
+
+✅ Recommend data models and database structure  
+✅ Generate example Laravel API routes/controllers  
+✅ Suggest reusable Vue component architecture  
+✅ Provide working Fabric.js/Canvas examples  
+✅ Explain how to build the variable tag binding logic  
+✅ Suggest best way to match canvas-to-PDF layout  
+✅ Optimize performance for large canvas / object trees  
+✅ Modular project structure examples for maintainability  
+✅ Provide PDF generation guidance with consistent layout  
+
+---
+
+### ⚙️ Technologies I’m Using or Accepting:
+
+- **Backend**: Laravel 10+, PHP 8.x  
+- **Frontend**: Vue 3 + Vite  
+- **Canvas**: Fabric.js (preferred) or Konva.js  
+- **PDF Engine**: DomPDF, wkhtmltopdf, or Puppeteer  
+- **Styling**: Bootstrap 5 or TailwindCSS  
+- **Data**: MySQL or MongoDB  
+- **State**: Pinia or Vuex  
+- **Optional**: Laravel Echo (for real-time), Laravel Media Library (for file uploads)
+
+---
+
+📦 **Give me the full project source code in a downloadable ZIP format (Laravel API + Vue 3 frontend), ready to run.**
