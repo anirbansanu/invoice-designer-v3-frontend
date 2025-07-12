@@ -191,5 +191,5 @@ Real-time editable style controls per element:
 
 ✅ I want you to **generate the full Laravel + Vue 3 + Konva.js application source code**, implementing as much of the above as possible. The code should be organized, modular, and production-ready.
 
-📦 **Provide the entire source code as a downloadable ZIP** (Laravel backend + Vue frontend integrated). Use Vite, Tailwind/Bootstrap, and recommend any setup steps or `.env` variables if needed.
+Provide the entire source code as a downloadable ZIP (Laravel backend + Vue frontend integrated). Use Vite, Tailwind/Bootstrap, and recommend any setup steps or `.env` variables if needed.
 
